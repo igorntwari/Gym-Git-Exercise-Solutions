@@ -342,8 +342,134 @@ User@ntwali MINGW64 ~/Desktop/github-excercise (ft/bundle-2)
 $
   ................................................................end of # Bundle 2 Exercises 1.............................................................................
 
-
+......................................................................bundle 2 Exercise 2 ....................................................................................
  
+ 
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/bundle-2)
+$ git checkout main
+Switched to a new branch 'main'
+branch 'main' set up to track 'origin/main'.
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 638 bytes | 14.00 KiB/s, done.
+From https://github.com/igorntwari/git-exercises
+   df7f5b4..763f671  main       -> origin/main
+Updating df7f5b4..763f671
+Fast-forward
+ about.html    | 10 ++++++++++
+ home.html     | 12 ++++++++++++
+ services.html | 12 ++++++++++++
+ 3 files changed, 34 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+ create mode 100644 services.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git branch ft/service-redesign
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git commit -m "made some changes in service"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean        
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git push
+Everything up-to-date
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git add .
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git push origin main
+Everything up-to-date
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git commit -m "made some changes in service"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   services.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git add .
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git push origin main
+Everything up-to-date
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?      
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git add --all
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git commit -m "added copyright"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   services.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/service-redesign)
+$ git diff main..ft/service-redesign
+diff --git a/services.html b/services.html
+index 80f489c..b882ab1 100644
+--- a/services.html
++++ b/services.html
+@@ -8,6 +8,5 @@
+   </head>
+   <body>
+     <h1>services</h1>
+-    <p>added new paragraph in service</p>
+   </body>
+ </html>
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/service-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git merge ft/service-redesign
+Already up to date.
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git commit -m "Merge ft/service-redesign into main"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git push origin main
+Everything up-to-date
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$
+ .............................................................end of bundle 2 Excercise 2 ...........................................................
  
  
  

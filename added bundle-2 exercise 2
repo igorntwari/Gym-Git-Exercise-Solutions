@@ -471,11 +471,356 @@ User@ntwali MINGW64 ~/Desktop/github-excercise (main)
 $
  .............................................................end of bundle 2 Excercise 2 ...........................................................
  
+ ............................................................bundle 3 Exercise 1 ................................................................
  
  
  
- 
- 
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git branch ft/team-page
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git checkout ft/team-page
+Switched to branch 'ft/team-page'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ touch team.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git commit -m "created new page"
+On branch ft/team-page
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        team.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git add team.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git commit -m "created new page"
+[ft/team-page 11e8dc6] created new page
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 team.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git push origin ft/team-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 270 bytes | 20.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/team-page' on GitHub by visiting:
+remote:      https://github.com/igorntwari/git-exercises/pull/new/ft/team-page
+remote:
+To https://github.com/igorntwari/git-exercises.git
+ * [new branch]      ft/team-page -> ft/team-page
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        team.html
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git add team.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git commit -m "Committing changes to team.html"
+[ft/team-page 40dddfc] Committing changes to team.html
+ 1 file changed, 12 insertions(+)
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git branch ft/contact-page
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git checkout ft/team-page
+Switched to branch 'ft/team-page'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git log
+commit 40dddfc7f077e90e735935c63c5689064628465c (HEAD -> ft/team-page)
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Thu May 18 00:17:49 2023 +0200
+
+    Committing changes to team.html
+
+commit 11e8dc690b9eb65c68941c4cbd527f283d5ffe05 (origin/ft/team-page)
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Thu May 18 00:13:56 2023 +0200
+:...skipping...
+commit 40dddfc7f077e90e735935c63c5689064628465c (HEAD -> ft/team-page)
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Thu May 18 00:17:49 2023 +0200
+
+    Committing changes to team.html
+
+commit 11e8dc690b9eb65c68941c4cbd527f283d5ffe05 (origin/ft/team-page)
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Thu May 18 00:13:56 2023 +0200
+
+    created new page
+
+commit d6ff4f6c2624a55b69a1f0b768e4957fd3e2f6e0 (origin/main, main, ft/contact-page)
+Merge: e2da766 3eec9fd
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Wed May 17 00:54:20 2023 +0200
+
+    Merge branch 'main' of https://github.com/igorntwari/git-exercises
+
+commit e2da7665fa053fda4d8b7bbc17b733977e1f9601
+Author: igorntwari <igorntwari28@gmail.com>
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git checkout ft/contact-page
+Switched to branch 'ft/contact-page'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/contact-page)
+$ git log ft/team-page
+commit 40dddfc7f077e90e735935c63c5689064628465c (ft/team-page)
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Thu May 18 00:17:49 2023 +0200
+
+    Committing changes to team.html
+
+commit 11e8dc690b9eb65c68941c4cbd527f283d5ffe05 (origin/ft/team-page)
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Thu May 18 00:13:56 2023 +0200
+
+    created new page
+
+commit d6ff4f6c2624a55b69a1f0b768e4957fd3e2f6e0 (HEAD -> ft/contact-page, origin/main, main)
+Merge: e2da766 3eec9fd
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Wed May 17 00:54:20 2023 +0200
+
+    Merge branch 'main' of https://github.com/igorntwari/git-exercises
+
+commit e2da7665fa053fda4d8b7bbc17b733977e1f9601
+Author: igorntwari <igorntwari28@gmail.com>
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/contact-page)
+$ git cherry-pick <commit-hash>
+bash: syntax error near unexpected token `newline'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/contact-page)
+$ git cherry-pick commit d6ff4f6c2624a55b69a1f0b768e4957fd3e2f6e0
+fatal: bad revision 'commit'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/contact-page)
+$
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/contact-page)
+$ git cherry-pick d6ff4f6c2624a55b69a1f0b768e4957fd3e2f6e0
+error: commit d6ff4f6c2624a55b69a1f0b768e4957fd3e2f6e0 is a merge but no -m option was given.
+fatal: cherry-pick failed
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/contact-page)
+$ git cherry-pick 40dddfc7f077e90e735935c63c5689064628465c1
+fatal: bad revision '40dddfc7f077e90e735935c63c5689064628465c1'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/contact-page)
+$ git cherry-pick 11e8dc690b9eb65c68941c4cbd527f283d5ffe05 01~
+fatal: bad revision '01~'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/contact-page)
+$ git cherry-pick 11e8dc690b9eb65c68941c4cbd527f283d5ffe05
+[ft/contact-page 62412c3] created new page
+ Date: Thu May 18 00:13:56 2023 +0200
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 team.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/contact-page)
+$ touch contact.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/contact-page)
+$ git add contact.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/contact-page)
+$ git commit -m "Added new content  to the contact page"
+[ft/contact-page 29b6c1c] Added new content  to the contact page
+ 1 file changed, 12 insertions(+)
+ create mode 100644 contact.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/contact-page)
+$ git push origin ft/contact-page
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 706 bytes | 141.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+remote:      https://github.com/igorntwari/git-exercises/pull/new/ft/contact-page
+remote:
+To https://github.com/igorntwari/git-exercises.git
+ * [new branch]      ft/contact-page -> ft/contact-page
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/contact-page)
+$ git checkout ft/faq-page
+error: pathspec 'ft/faq-page' did not match any file(s) known to git
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/contact-page)
+$ git branch ft/faq-page
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/contact-page)
+$ git checkout ft/faq-page
+Switched to branch 'ft/faq-page'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/faq-page)
+$ touch faq.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/faq-page)
+$ git add faq.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/faq-page)
+$ git commit -m "created new file named faq"
+[ft/faq-page 3d51d82] created new file named faq
+ 1 file changed, 12 insertions(+)
+ create mode 100644 faq.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/faq-page)
+$ git push origin ft/faq-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 471 bytes | 1024 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+remote:      https://github.com/igorntwari/git-exercises/pull/new/ft/faq-page
+remote:
+To https://github.com/igorntwari/git-exercises.git
+ * [new branch]      ft/faq-page -> ft/faq-page
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/faq-page)
+$ git checkout ft/team-page
+Rename from 'C:/Users/User/Desktop/github-excercise/.git/HEAD.lock' to 'C:/Users/User/Desktop/github-excercise/.git/HEAD' failed. Should I try again? (y/n) y
+Switched to branch 'ft/team-page'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git revert git checkout ft/team-page
+fatal: bad revision 'git'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git revert 11e8dc690b9eb65c68941c4cbd527f283d5ffe051
+fatal: bad revision '11e8dc690b9eb65c68941c4cbd527f283d5ffe051'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git revert 11e8dc690b9eb65c68941c4cbd527f283d5ffe051
+fatal: bad revision '11e8dc690b9eb65c68941c4cbd527f283d5ffe051'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git log
+commit 40dddfc7f077e90e735935c63c5689064628465c (HEAD -> ft/team-page)
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Thu May 18 00:17:49 2023 +0200
+
+    Committing changes to team.html
+
+commit 11e8dc690b9eb65c68941c4cbd527f283d5ffe05 (origin/ft/team-page)
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Thu May 18 00:13:56 2023 +0200
+
+    created new page
+
+commit d6ff4f6c2624a55b69a1f0b768e4957fd3e2f6e0 (origin/main, main)
+Merge: e2da766 3eec9fd
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Wed May 17 00:54:20 2023 +0200
+
+    Merge branch 'main' of https://github.com/igorntwari/git-exercises
+
+commit e2da7665fa053fda4d8b7bbc17b733977e1f9601
+Author: igorntwari <igorntwari28@gmail.com>
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git revert 11e8dc690b9eb65c68941c4cbd527f283d5ffe051~
+fatal: bad revision '11e8dc690b9eb65c68941c4cbd527f283d5ffe051~'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git revert 11e8dc690b9eb65c68941c4cbd527f283d5ffe051
+fatal: bad revision '11e8dc690b9eb65c68941c4cbd527f283d5ffe051'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git revert 40dddfc7f077e90e735935c63c5689064628465c1
+fatal: bad revision '40dddfc7f077e90e735935c63c5689064628465c1'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git log
+commit 40dddfc7f077e90e735935c63c5689064628465c (HEAD -> ft/team-page)
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Thu May 18 00:17:49 2023 +0200
+
+    Committing changes to team.html
+
+commit 11e8dc690b9eb65c68941c4cbd527f283d5ffe05 (origin/ft/team-page)
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Thu May 18 00:13:56 2023 +0200
+
+    created new page
+
+commit d6ff4f6c2624a55b69a1f0b768e4957fd3e2f6e0 (origin/main, main)
+Merge: e2da766 3eec9fd
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Wed May 17 00:54:20 2023 +0200
+
+    Merge branch 'main' of https://github.com/igorntwari/git-exercises
+
+commit e2da7665fa053fda4d8b7bbc17b733977e1f9601
+Author: igorntwari <igorntwari28@gmail.com>
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git revert 40dddfc7f077e90e735935c63c5689064628465c1
+fatal: bad revision '40dddfc7f077e90e735935c63c5689064628465c1'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git revert 40dddfc7f077e90e735935c63c5689064628465c
+hint: Waiting for your editor to close the file... Vim: Error reading input, exiting...
+Vim: preserving files...
+Vim: Finished.
+
+error: There was a problem with the editor 'vi'.
+Please supply the message using either -m or -F option.
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ -m
+bash: -m: command not found
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git revert 40dddfc7f077e90e735935c63c5689064628465c
+error: your local changes would be overwritten by revert.
+hint: commit your changes or stash them to proceed.
+fatal: revert failed
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$ git push origin ft/team-page
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 481 bytes | 481.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/igorntwari/git-exercises.git
+   11e8dc6..40dddfc  ft/team-page -> ft/team-page
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
+$
+.......................................................................end of bundle 3 Exercises1 ...........................................................
  
  
  

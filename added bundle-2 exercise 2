@@ -821,11 +821,174 @@ To https://github.com/igorntwari/git-exercises.git
 User@ntwali MINGW64 ~/Desktop/github-excercise (ft/team-page)
 $
 .......................................................................end of bundle 3 Exercises1 ...........................................................
+  ...................................................bundle 3 Exercises 2 ..........................
  
  
  
- 
- 
+ User@ntwali MINGW64 ~/Desktop/github-excercise (ft/faq-page)
+$ git checkout -b ft/home-page-redesign
+Switched to a new branch 'ft/home-page-redesign'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/home-page-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git add index.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git commit -m "made changes in main"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        faq.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git add faq.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git commit -m "made changes in main"
+[main 12ca879] made changes in main
+ 1 file changed, 13 insertions(+)
+ create mode 100644 faq.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git push origin main 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 504 bytes | 252.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/igorntwari/git-exercises.git
+   d6ff4f6..12ca879  main -> main
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git checkout ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/home-page-redesign)
+$ git fetch
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 630 bytes | 22.00 KiB/s, done.
+From https://github.com/igorntwari/git-exercises
+   6f12252..59194d8  ft/bundle-2 -> origin/ft/bundle-2
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/home-page-redesign)
+$ git rebase origin/main
+Auto-merging faq.html
+CONFLICT (add/add): Merge conflict in faq.html
+error: could not apply 3d51d82... created new file named faq
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 3d51d82... created new file named faq
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/home-page-redesign|REBASE 3/3)
+$ git rebase --continue
+faq.html: needs merge
+You must edit all merge conflicts and then
+mark them as resolved using git add
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/home-page-redesign|REBASE 3/3)
+$ git checkout main
+Warning: you are leaving 2 commits behind, not connected to
+any of your branches:
+
+  1b916f8 Added new content  to the contact page
+  bfa3a78 created new page
+
+If you want to keep them by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> 1b916f8
+
+Switched to branch 'main'
+M       faq.html
+M       home.html
+Your branch is up to date with 'origin/main'.
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/home-page-redesign|REBASE 3/3)
+$ git commit -m "added some changes in home"
+[main e3c42e5] added some changes in home
+ 1 file changed, 13 deletions(-)
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/home-page-redesign|REBASE 3/3)
+$ git rebase origin/ft/home-page-redesign
+fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+        git rebase (--continue | --abort | --skip)
+If that is not the case, please
+        rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/home-page-redesign|REBASE 3/3)
+$ touch home-page.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/home-page-redesign|REBASE 3/3)
+$ git rebase --continue
+You must edit all merge conflicts and then
+mark them as resolved using git add
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/home-page-redesign|REBASE 3/3)
+$ git rebase origin/main
+fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+        git rebase (--continue | --abort | --skip)
+If that is not the case, please
+        rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/home-page-redesign|REBASE 3/3)
+$ rm -fr ".git/rebase-merge"
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git commit -m "added some changes in home"
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   home.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        home-page.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 263 bytes | 263.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/igorntwari/git-exercises.git
+   12ca879..e3c42e5  main -> main
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$
+..................................end of bundle 3 Exercise 2............................................................
  
  
  

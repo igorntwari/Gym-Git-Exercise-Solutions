@@ -1,0 +1,84 @@
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git remote add git-copy https://github.com/igorntwari/exercise-4
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git remote -v
+git-copy        https://github.com/igorntwari/exercise-4 (fetch)
+git-copy        https://github.com/igorntwari/exercise-4 (push)
+origin  https://github.com/igorntwari/git-exercises.git (fetch)
+origin  https://github.com/igorntwari/git-exercises.git (push)
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git add home.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git commit -m "Update home page with changes"
+[main 2216c02] Update home page with changes
+ 1 file changed, 2 insertions(+)
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 390 bytes | 195.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/igorntwari/git-exercises.git
+   e3c42e5..2216c02  main -> main
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git push git-copy main
+To https://github.com/igorntwari/exercise-4
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/igorntwari/exercise-4'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git remote add git-copy https://github.com/igorntwari/exercise-4.git
+error: remote git-copy already exists.
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git push git-copy main
+To https://github.com/igorntwari/exercise-4
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/igorntwari/exercise-4'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git add .
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git commit -m "Committing local changes"
+[main ccb536a] Committing local changes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 home-page.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git fetch git-copy
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 602 bytes | 3.00 KiB/s, done.
+From https://github.com/igorntwari/exercise-4
+ * [new branch]      main       -> git-copy/main
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git reset --hard git-copy/main
+HEAD is now at 7dfeadf Initial commit
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git push git-copy main
+Everything up-to-date
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$

@@ -1,0 +1,196 @@
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$ touch footer.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$ git add .
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$ git commit -m "new file created"
+[ft/footer 5ea3c92] new file created
+ 1 file changed, 12 insertions(+)   
+ create mode 100644 footer.html     
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$ git add footer.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$ git commit -m "added new paragraph"
+[ft/footer c352acf] added new paragraph
+ 1 file changed, 1 insertion(+)
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$ git push origin ft/footer
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 1.33 KiB | 226.00 KiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+remote: 
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/igorntwari/git-exercises/pull/new/ft/footer
+remote:
+To https://github.com/igorntwari/git-exercises.git
+ * [new branch]      ft/footer -> ft/footer
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$ git checkout -b new-branch main
+Switched to a new branch 'new-branch'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (new-branch)
+$ git log
+commit 7dfeadff3946def91ed7fa73af7dd4706895cbf6 (HEAD -> new-branch, git-copy/main, main)
+Author: igor ntwali <82104389+igorntwari@users.noreply.github.com>
+Date:   Thu May 18 02:37:01 2023 +0200
+
+    Initial commit
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (new-branch)
+$ git cherry-pick <commit-hash>
+bash: syntax error near unexpected token `newline'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (new-branch)
+$ git cherry-pick 7dfeadff3946def91ed7fa73af7dd4706895cbf6
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+Otherwise, please use 'git cherry-pick --skip'
+On branch new-branch
+You are currently cherry-picking commit 7dfeadf.
+  (all conflicts fixed: run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+nothing to commit, working tree clean
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (new-branch|CHERRY-PICKING)
+$ git checkout ft/footer
+Switched to branch 'ft/footer'
+warning: cancelling a cherry picking in progress
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$ git log
+commit c352acfc7dd7a43d49c279b050c85db16283aba0 (HEAD -> ft/footer, origin/ft/footer)
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Thu May 18 02:57:28 2023 +0200
+
+    added new paragraph
+
+commit 5ea3c92f45ca3f1ba2cbd9c9a8e98a875382f472
+Author: igorntwari <igorntwari28@gmail.com>
+Date:   Thu May 18 02:56:04 2023 +0200
+
+    new file created
+
+commit 7dfeadff3946def91ed7fa73af7dd4706895cbf6 (git-copy/main, new-branch, main)
+Author: igor ntwali <82104389+igorntwari@users.noreply.github.com>
+Date:   Thu May 18 02:37:01 2023 +0200
+
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$ git cherry-pick 5ea3c92f45ca3f1ba2cbd9c9a8e98a875382f472
+Auto-merging footer.html
+CONFLICT (add/add): Merge conflict in footer.html
+error: could not apply 5ea3c92... new file created
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git cherry-pick --continue".
+hint: You can instead skip this commit with "git cherry-pick --skip".
+hint: To abort and get back to the state before "git cherry-pick",
+hint: run "git cherry-pick --abort".
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer|CHERRY-PICKING)
+$ git commit -m "footer changes squashing"
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U       footer.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer|CHERRY-PICKING)
+$ git push origin new-branch
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'new-branch' on GitHub by visiting:
+remote:      https://github.com/igorntwari/git-exercises/pull/new/new-branch
+remote:
+To https://github.com/igorntwari/git-exercises.git
+ * [new branch]      new-branch -> new-branch
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer|CHERRY-PICKING)
+$ git checkout main
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 1 and 11 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (main)
+$ git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/squashing)
+$ git checkout ft/footer
+Switched to branch 'ft/footer'
+Your branch is up to date with 'origin/ft/footer'.
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$ git merge --squash main
+Already up to date. (nothing to squash)
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$ git checkout ft/squashing
+Switched to branch 'ft/squashing'
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/squashing)
+$ touch squashing.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/squashing)
+$ git merge --squash main
+Already up to date. (nothing to squash)
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/squashing)
+$ git checkout ft/footer
+Switched to branch 'ft/footer'
+Your branch is up to date with 'origin/ft/footer'.
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$ git commit -m "Squash merged changes from main branch"
+On branch ft/footer
+Your branch is up to date with 'origin/ft/footer'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        squashing.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$ git add .
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$ git commit -m "Squash merged changes from main branch"
+[ft/footer 1196f1f] Squash merged changes from main branch
+ 1 file changed, 12 insertions(+)
+ create mode 100644 squashing.html
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$ git push origin ft/footer
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 527 bytes | 263.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/igorntwari/git-exercises.git
+   88b2082..1196f1f  ft/footer -> ft/footer
+
+User@ntwali MINGW64 ~/Desktop/github-excercise (ft/footer)
+$

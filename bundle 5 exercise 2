@@ -1,0 +1,38 @@
+User@ntwali MINGW64 ~
+$ cd Desktop/
+
+User@ntwali MINGW64 ~/Desktop
+$ cd bundle\ 5/
+
+User@ntwali MINGW64 ~/Desktop/bundle 5
+$ git clone https://github.com/igorntwari/git-cafe-exercise-1.git
+Cloning into 'git-cafe-exercise-1'...
+remote: Enumerating objects: 107, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 107 (delta 5), reused 4 (delta 4), pack-reused 100
+Receiving objects: 100% (107/107), 1.95 MiB | 534.00 KiB/s, done.
+Resolving deltas: 100% (5/5), done.
+User@ntwali MINGW64 ~/Desktop/bundle 5/git-cafe-exercise-1 (main)
+$ git add .
+User@ntwali MINGW64 ~/Desktop/bundle 5/git-cafe-exercise-1 (main)
+$ git commit -m "changed title and paragraph"
+[main fa30ce0] changed title and paragraph
+ 3 files changed, 710 insertions(+), 415 deletions(-)
+
+User@ntwali MINGW64 ~/Desktop/bundle 5/git-cafe-exercise-1 (main)
+$ git push origin main
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 2.94 KiB | 602.00 KiB/s, done.
+Total 6 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 4 local objects.
+To https://github.com/igorntwari/git-cafe-exercise-1.git
+   d1d3f9c..fa30ce0  main -> main
+
+User@ntwali MINGW64 ~/Desktop/bundle 5/git-cafe-exercise-1 (main)
+$
+
+

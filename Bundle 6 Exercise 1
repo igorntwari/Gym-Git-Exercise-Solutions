@@ -1,0 +1,34 @@
+User@ntwali MINGW64 ~/Desktop/bundle 5/git-cafe-exercise-1 (main)
+$ git checkout -b new-feature-branch main
+Switched to a new branch 'new-feature-branch'
+
+User@ntwali MINGW64 ~/Desktop/bundle 5/git-cafe-exercise-1 (new-feature-branch)
+$ touch menu.html
+
+User@ntwali MINGW64 ~/Desktop/bundle 5/git-cafe-exercise-1 (new-feature-branch)
+$ git add .
+
+User@ntwali MINGW64 ~/Desktop/bundle 5/git-cafe-exercise-1 (new-feature-branch)
+$ git commit -m "Add new page Menu"
+[new-feature-branch 41fa4ad] Add new page Menu
+ 1 file changed, 12 insertions(+)
+ create mode 100644 menu.html
+
+User@ntwali MINGW64 ~/Desktop/bundle 5/git-cafe-exercise-1 (new-feature-branch)
+$ git push origin new-feature-branch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 475 bytes | 237.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'new-feature-branch' on GitHub by visiting:
+remote:      https://github.com/igorntwari/git-cafe-exercise-1/pull/new/new-feature-branch
+remote:
+To https://github.com/igorntwari/git-cafe-exercise-1.git
+ * [new branch]      new-feature-branch -> new-feature-branch
+
+User@ntwali MINGW64 ~/Desktop/bundle 5/git-cafe-exercise-1 (new-feature-branch)
+$

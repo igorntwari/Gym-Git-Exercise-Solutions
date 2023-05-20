@@ -1,0 +1,30 @@
+User@ntwali MINGW64 ~/Desktop/bundle 5/git-cafe-exercise-1 (new-feature-branch)
+$ git checkout -b bug-fix
+Switched to a new branch 'bug-fix'
+
+User@ntwali MINGW64 ~/Desktop/bundle 5/git-cafe-exercise-1 (bug-fix)
+$ git add index-4.html
+
+User@ntwali MINGW64 ~/Desktop/bundle 5/git-cafe-exercise-1 (bug-fix)
+$ git commit -m "Fix the title of index-4.html to 'Contact'"
+[bug-fix 8b0dca1] Fix the title of index-4.html to 'Contact'
+ 1 file changed, 232 insertions(+), 164 deletions(-)        
+
+User@ntwali MINGW64 ~/Desktop/bundle 5/git-cafe-exercise-1 (bug-fix)
+$ git push origin bug-fix
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.42 KiB | 486.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'bug-fix' on GitHub by visiting:
+remote:      https://github.com/igorntwari/git-cafe-exercise-1/pull/new/bug-fix
+remote:
+To https://github.com/igorntwari/git-cafe-exercise-1.git
+ * [new branch]      bug-fix -> bug-fix
+
+User@ntwali MINGW64 ~/Desktop/bundle 5/git-cafe-exercise-1 (bug-fix)
+$
